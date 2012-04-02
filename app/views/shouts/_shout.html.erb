@@ -1,0 +1,5 @@
+<%= content_tag_for(:div, shout) do %>
+  <%= link_to shout.user_email, shout.user %>
+  <%= shout.body %>
+  <%= link_to time_ago_in_words(shout.created_at), shout %> ago
+<% end %>

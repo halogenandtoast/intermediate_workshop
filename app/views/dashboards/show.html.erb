@@ -4,3 +4,5 @@ Welcome <%= current_user.email %>
   <%= form.text_field :body, placeholder: "Shout here" %>
   <%= form.submit "Shout!" %>
 <% end %>
+
+<%= render @shouts %>
