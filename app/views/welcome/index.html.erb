@@ -1,1 +1,12 @@
 <h1>Shouter</h1>
+<%= form_for(@user) do |form| %>
+  <div>
+    <%= form.email_field :email, placeholder: "Email address" %>
+  </div>
+  <div>
+    <%= form.password_field :password, placeholder: "Password" %>
+  </div>
+  <div>
+    <%= form.submit "Sign up" %>
+  </div>
+<% end %>
