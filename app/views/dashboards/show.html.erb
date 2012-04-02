@@ -1,1 +1,6 @@
 Welcome <%= current_user.email %>
+
+<%= form_for(@shout) do |form| %>
+  <%= form.text_field :body, placeholder: "Shout here" %>
+  <%= form.submit "Shout!" %>
+<% end %>
