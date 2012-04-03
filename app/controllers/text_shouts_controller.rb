@@ -1,7 +1,8 @@
-class ShoutsController < ApplicationController
+class TextShoutsController < ApplicationController
   before_filter :authorize, only: [:create]
   def create
-    @shout = current_user.shouts.new(params[:shout])
+    @text_shout = TextShout.new(params[:text_shout])
+    @shout = current_user.shouts.new(medium: @text_shout)
     @shout.save
     redirect_to dashboard_path
   end
