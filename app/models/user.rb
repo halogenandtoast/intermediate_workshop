@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
     ShoutTimeline.new([id])
   end
 
-  def timeline_shouts
+  def shout_timeline
     ShoutTimeline.new(self_and_followed_user_ids)
   end
 

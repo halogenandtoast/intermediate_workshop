@@ -2,6 +2,6 @@ class DashboardsController < ApplicationController
   before_filter :authorize
   def show
     @shout = Shout.new
-    @shouts = current_user.timeline_shouts
+    @timeline = current_user.shout_timeline
   end
 end
