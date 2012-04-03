@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120402174730) do
+ActiveRecord::Schema.define(:version => 20120403161322) do
 
   create_table "following_relationships", :force => true do |t|
     t.integer  "follower_id"
@@ -24,13 +24,21 @@ ActiveRecord::Schema.define(:version => 20120402174730) do
   add_index "following_relationships", ["follower_id"], :name => "index_following_relationships_on_follower_id"
 
   create_table "shouts", :force => true do |t|
-    t.string   "body"
     t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "medium_type"
+    t.integer  "medium_id"
+  end
+
+  add_index "shouts", ["medium_type", "medium_id"], :name => "index_shouts_on_medium_type_and_medium_id"
+  add_index "shouts", ["user_id"], :name => "index_shouts_on_user_id"
+
+  create_table "text_shouts", :force => true do |t|
+    t.string   "body"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "shouts", ["user_id"], :name => "index_shouts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
