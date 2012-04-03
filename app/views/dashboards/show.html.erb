@@ -1,5 +1,10 @@
-<%= form_for(@shout) do |form| %>
+<%= form_for(@text_shout) do |form| %>
   <%= form.text_field :body, placeholder: "Shout here" %>
+  <%= form.submit "Shout!" %>
+<% end %>
+
+<%= form_for(@photo_shout) do |form| %>
+  <%= form.file_field :image %>
   <%= form.submit "Shout!" %>
 <% end %>
 

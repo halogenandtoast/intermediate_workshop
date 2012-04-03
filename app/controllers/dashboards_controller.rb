@@ -1,7 +1,8 @@
 class DashboardsController < ApplicationController
   before_filter :authorize
   def show
-    @shout = TextShout.new
+    @text_shout = TextShout.new
+    @photo_shout = PhotoShout.new
     @timeline = current_user.shout_timeline
   end
 end
