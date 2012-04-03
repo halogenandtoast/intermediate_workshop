@@ -13,6 +13,8 @@ group :test do
   gem 'factory_girl_rails'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'launchy'
+  gem 'ruby-debug19', require: "ruby-debug"
 end
 
 

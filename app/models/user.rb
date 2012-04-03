@@ -8,7 +8,11 @@ class User < ActiveRecord::Base
   has_many :following_users, through: :following_user_relationships, source: :follower
 
   def current_shouts
-    shouts.current
+    ShoutTimeline.new([id])
+  end
+
+  def timeline_shouts
+    ShoutTimeline.new(self_and_followed_user_ids)
   end
 
   def follow(followed_user)
