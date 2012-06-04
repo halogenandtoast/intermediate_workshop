@@ -1,0 +1,10 @@
+<h1>Welcome <%= current_user.email %></h1>
+
+<%= form_for(@shout) do |form| %>
+  <%= form.text_field :body, placeholder: "Shout here!" %>
+  <%= form.submit "Shout" %>
+<% end %>
+
+<% @shouts.each do |shout| %>
+  <div><%= shout.body %> <%= time_ago_in_words(shout.created_at) %> ago</div>
+<% end %>
