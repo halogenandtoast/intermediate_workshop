@@ -11,16 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604150452) do
+ActiveRecord::Schema.define(:version => 20120604171326) do
 
   create_table "shouts", :force => true do |t|
-    t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "medium_type"
+    t.integer  "medium_id"
   end
 
   add_index "shouts", ["user_id"], :name => "index_shouts_on_user_id"
+
+  create_table "text_media", :force => true do |t|
+    t.text "body"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"

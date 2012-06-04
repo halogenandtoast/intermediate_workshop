@@ -1,6 +1,6 @@
 class DashboardsController < ApplicationController
   def show
-    @shout = Shout.new
+    @text_medium = TextMedium.new
     @shouts = current_user.shouts.current
   end
 end
