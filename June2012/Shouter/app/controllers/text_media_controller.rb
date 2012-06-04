@@ -1,4 +1,4 @@
-class ShoutsController < ApplicationController
+class TextMediaController < ApplicationController
   def create
     text_medium = TextMedium.new(params[:text_medium])
     shout = current_user.shouts.new

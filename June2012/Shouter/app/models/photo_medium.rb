@@ -1,3 +1,4 @@
 class PhotoMedium < ActiveRecord::Base
-  # attr_accessible :title, :body
+  has_attached_file :photo
+  attr_accessible :photo
 end
