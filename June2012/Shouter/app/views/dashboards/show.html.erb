@@ -1,7 +1,12 @@
 <h1>Welcome <%= current_user.email %></h1>
 
-<%= form_for(@text_medium, url: shouts_path) do |form| %>
+<%= form_for(@text_medium) do |form| %>
   <%= form.text_field :body, placeholder: "Shout here!" %>
+  <%= form.submit "Shout" %>
+<% end %>
+
+<%= form_for(@photo_medium) do |form| %>
+  <%= form.file_field :photo %>
   <%= form.submit "Shout" %>
 <% end %>
 
