@@ -1,6 +1,6 @@
 <h1>Welcome <%= current_user.email %></h1>
 
-<%= form_for(:search, url: '#') do |form| %>
+<%= form_for(:search, url: search_path, method: :get) do |form| %>
   <%= form.text_field :query %>
   <%= form.submit "Search" %>
 <% end %>
