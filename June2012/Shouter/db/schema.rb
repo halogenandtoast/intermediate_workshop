@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604184659) do
+ActiveRecord::Schema.define(:version => 20120605140258) do
+
+  create_table "following_relationships", :force => true do |t|
+    t.integer "follower_id"
+    t.integer "followed_user_id"
+  end
+
+  add_index "following_relationships", ["followed_user_id"], :name => "index_following_relationships_on_followed_user_id"
+  add_index "following_relationships", ["follower_id"], :name => "index_following_relationships_on_follower_id"
 
   create_table "photo_media", :force => true do |t|
     t.string   "photo_file_name"
