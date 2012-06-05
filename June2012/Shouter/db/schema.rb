@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120605145134) do
+ActiveRecord::Schema.define(:version => 20120605200217) do
 
   create_table "following_relationships", :force => true do |t|
     t.integer "follower_id"
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(:version => 20120605145134) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+  end
+
+  create_table "shout_search_indices", :force => true do |t|
+    t.integer "shout_id"
+    t.text    "index"
   end
 
   create_table "shouts", :force => true do |t|
