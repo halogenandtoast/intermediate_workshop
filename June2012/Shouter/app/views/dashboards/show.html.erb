@@ -1,5 +1,10 @@
 <h1>Welcome <%= current_user.email %></h1>
 
+<%= form_for(:search, url: '#') do |form| %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
+
 <%= form_for(@text_medium) do |form| %>
   <%= form.text_field :body, placeholder: "Shout here!" %>
   <%= form.submit "Shout" %>
