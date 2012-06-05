@@ -2,6 +2,7 @@ class DashboardsController < ApplicationController
   def show
     @text_medium = TextMedium.new
     @photo_medium = PhotoMedium.new
-    @shouts = current_user.shouts.current
+    @shout_timeline = current_user.shout_timeline
+    @followed_users = current_user.followed_users
   end
 end

@@ -1,3 +1,5 @@
 <h1><%= @user.email %></h1>
-<%= button_to "Follow", "#" %>
+<% if current_user.can_follow?(@user) %>
+  <%= button_to "Follow", user_follow_path(@user) %>
+<% end %>
 <%= render @shouts %>

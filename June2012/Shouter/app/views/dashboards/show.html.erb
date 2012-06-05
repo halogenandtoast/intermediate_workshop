@@ -10,4 +10,11 @@
   <%= form.submit "Shout" %>
 <% end %>
 
-<%= render @shouts %>
+<h2>Followed users</h2>
+<ul>
+  <% @followed_users.each do |followed_user| %>
+    <li><%= link_to followed_user.email, followed_user %></li>
+  <% end %>
+</ul>
+
+<%= render @shout_timeline %>
