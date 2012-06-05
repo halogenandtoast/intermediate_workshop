@@ -11,6 +11,9 @@
       <div class="flash <%= key %>"><%= value %></div>
     <% end -%>
 
+    <% if signed_in? %>
+      <%= link_to "Sign out", sign_out_path, method: :delete %>
+    <% end %>
 
     <%= yield %>
 
